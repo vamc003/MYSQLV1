@@ -1,0 +1,56 @@
+change_set:
+  date: '2026-09-28'
+  database: employee_management
+  generated_at: '2026-09-28T16:21:39.577151'
+summary:
+  objects_added: 15
+  objects_modified: 0
+  objects_deleted: 0
+  columns_added: 0
+  columns_modified: 0
+  columns_deleted: 0
+  indexes_added: 0
+  indexes_deleted: 0
+  foreign_keys_added: 0
+  foreign_keys_deleted: 0
+changes:
+  objects_added:
+  - type: table
+    name: employees
+  - type: table
+    name: employee_addresses
+  - type: table
+    name: employee_projects
+  - type: table
+    name: employee_audit
+  - type: table
+    name: employee_attendance
+  - type: table
+    name: employee_salaries
+  - type: table
+    name: departments
+  - type: view
+    name: v_department_summary
+  - type: view
+    name: v_employee_details
+  - type: procedure
+    name: sp_get_employee
+  - type: procedure
+    name: sp_get_department_employees
+  - type: function
+    name: fn_annual_salary
+  - type: trigger
+    name: trg_employee_created
+  - type: trigger
+    name: trg_salary_updated
+  - type: event
+    name: evt_salary_review
+  objects_modified: []
+  objects_deleted: []
+  columns_added: []
+  columns_modified: []
+  columns_deleted: []
+  indexes_added: []
+  indexes_deleted: []
+  foreign_keys_added: []
+  foreign_keys_deleted: []

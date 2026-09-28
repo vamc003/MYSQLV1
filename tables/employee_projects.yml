@@ -1,0 +1,105 @@
+object:
+  type: table
+  name: employee_projects
+metadata:
+  engine: InnoDB
+  collation: utf8mb4_0900_ai_ci
+  comment: ''
+columns:
+- name: project_id
+  position: 1
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: auto_increment
+  comment: ''
+- name: employee_id
+  position: 2
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: project_name
+  position: 3
+  data_type: varchar
+  column_type: varchar(150)
+  length: 150
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: project_role
+  position: 4
+  data_type: varchar
+  column_type: varchar(100)
+  length: 100
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: start_date
+  position: 5
+  data_type: date
+  column_type: date
+  length: null
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: end_date
+  position: 6
+  data_type: date
+  column_type: date
+  length: null
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: project_status
+  position: 7
+  data_type: enum
+  column_type: enum('Planned','Active','Completed')
+  length: 9
+  precision: null
+  scale: null
+  nullable: true
+  default: Active
+  extra: ''
+  comment: ''
+primary_key:
+  columns:
+  - project_id
+foreign_keys:
+- name: fk_project_employee
+  columns:
+  - employee_id
+  referenced_table: employees
+  referenced_columns:
+  - employee_id
+  update_rule: NO ACTION
+  delete_rule: CASCADE
+unique_constraints: []
+indexes:
+- name: idx_project_employee
+  unique: false
+  type: BTREE
+  columns:
+  - employee_id
+check_constraints: []

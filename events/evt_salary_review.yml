@@ -1,0 +1,11 @@
+object:
+  type: event
+  name: evt_salary_review
+definition: "BEGIN\n\n    UPDATE employees\n    SET updated_at = CURRENT_TIMESTAMP\n\
+  \    WHERE employment_status = 'Active';\n\nEND"
+event_type: RECURRING
+execute_at: null
+interval_value: '1'
+interval_field: MONTH
+status: ENABLED
+comment: ''

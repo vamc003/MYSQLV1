@@ -1,0 +1,190 @@
+object:
+  type: table
+  name: employees
+metadata:
+  engine: InnoDB
+  collation: utf8mb4_0900_ai_ci
+  comment: ''
+columns:
+- name: employee_id
+  position: 1
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: auto_increment
+  comment: ''
+- name: first_name
+  position: 2
+  data_type: varchar
+  column_type: varchar(50)
+  length: 50
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: last_name
+  position: 3
+  data_type: varchar
+  column_type: varchar(50)
+  length: 50
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: email
+  position: 4
+  data_type: varchar
+  column_type: varchar(150)
+  length: 150
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: phone
+  position: 5
+  data_type: varchar
+  column_type: varchar(20)
+  length: 20
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: gender
+  position: 6
+  data_type: enum
+  column_type: enum('Male','Female','Other')
+  length: 6
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: date_of_birth
+  position: 7
+  data_type: date
+  column_type: date
+  length: null
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: hire_date
+  position: 8
+  data_type: date
+  column_type: date
+  length: null
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: job_title
+  position: 9
+  data_type: varchar
+  column_type: varchar(100)
+  length: 100
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: department_id
+  position: 10
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: employment_status
+  position: 11
+  data_type: enum
+  column_type: enum('Active','Inactive','On Leave')
+  length: 8
+  precision: null
+  scale: null
+  nullable: true
+  default: Active
+  extra: ''
+  comment: ''
+- name: salary
+  position: 12
+  data_type: decimal
+  column_type: decimal(12,2)
+  length: null
+  precision: 12
+  scale: 2
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: created_at
+  position: 13
+  data_type: timestamp
+  column_type: timestamp
+  length: null
+  precision: null
+  scale: null
+  nullable: true
+  default: CURRENT_TIMESTAMP
+  extra: DEFAULT_GENERATED
+  comment: ''
+- name: updated_at
+  position: 14
+  data_type: timestamp
+  column_type: timestamp
+  length: null
+  precision: null
+  scale: null
+  nullable: true
+  default: CURRENT_TIMESTAMP
+  extra: DEFAULT_GENERATED on update CURRENT_TIMESTAMP
+  comment: ''
+primary_key:
+  columns:
+  - employee_id
+foreign_keys:
+- name: fk_employee_department
+  columns:
+  - department_id
+  referenced_table: departments
+  referenced_columns:
+  - department_id
+  update_rule: NO ACTION
+  delete_rule: NO ACTION
+unique_constraints:
+- name: uk_employee_email
+  columns:
+  - email
+indexes:
+- name: fk_employee_department
+  unique: false
+  type: BTREE
+  columns:
+  - department_id
+- name: uk_employee_email
+  unique: true
+  type: BTREE
+  columns:
+  - email
+check_constraints: []

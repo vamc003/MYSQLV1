@@ -1,0 +1,26 @@
+relationships:
+- from_table: employee_addresses
+  from_column: employee_id
+  to_table: employees
+  to_column: employee_id
+  constraint: fk_address_employee
+- from_table: employee_attendance
+  from_column: employee_id
+  to_table: employees
+  to_column: employee_id
+  constraint: fk_attendance_employee
+- from_table: employee_projects
+  from_column: employee_id
+  to_table: employees
+  to_column: employee_id
+  constraint: fk_project_employee
+- from_table: employee_salaries
+  from_column: employee_id
+  to_table: employees
+  to_column: employee_id
+  constraint: fk_salary_employee
+- from_table: employees
+  from_column: department_id
+  to_table: departments
+  to_column: department_id
+  constraint: fk_employee_department

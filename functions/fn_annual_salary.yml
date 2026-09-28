@@ -1,0 +1,8 @@
+object:
+  type: function
+  name: fn_annual_salary
+definition: "BEGIN\n\n    RETURN p_monthly_salary * 12;\n\nEND"
+return_type: decimal(14,2)
+sql_data_access: CONTAINS SQL
+deterministic: 'YES'
+security_type: DEFINER

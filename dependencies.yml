@@ -1,0 +1,11 @@
+dependencies:
+- dependent: employee_addresses
+  depends_on: employees
+- dependent: employee_attendance
+  depends_on: employees
+- dependent: employee_projects
+  depends_on: employees
+- dependent: employee_salaries
+  depends_on: employees
+- dependent: employees
+  depends_on: departments

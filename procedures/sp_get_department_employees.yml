@@ -1,0 +1,11 @@
+object:
+  type: procedure
+  name: sp_get_department_employees
+definition: "BEGIN\n\n    SELECT\n        e.employee_id,\n        CONCAT(e.first_name,\
+  \ ' ', e.last_name) AS employee_name,\n        e.job_title,\n        e.salary\n\
+  \    FROM employees e\n    WHERE e.department_id = p_department_id\n    ORDER BY\
+  \ e.salary DESC;\n\nEND"
+return_type: null
+sql_data_access: CONTAINS SQL
+deterministic: 'NO'
+security_type: DEFINER

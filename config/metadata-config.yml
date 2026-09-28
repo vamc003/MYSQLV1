@@ -1,0 +1,56 @@
+# ============================================================
+# MySQL Database Metadata Extractor Configuration
+# ============================================================
+
+# Database metadata extraction settings
+database:
+  extract_database: true
+  extract_tables: true
+  extract_views: true
+  extract_procedures: true
+  extract_functions: true
+  extract_triggers: true
+  extract_events: true
+  extract_relationships: true
+  extract_dependencies: true
+
+
+# Table-level metadata
+tables:
+  extract_columns: true
+  extract_primary_keys: true
+  extract_foreign_keys: true
+  extract_unique_constraints: true
+  extract_indexes: true
+  extract_check_constraints: true
+
+
+# Output settings
+output:
+  format: yaml
+  overwrite_existing: true
+  create_missing_directories: true
+
+
+# History settings
+history:
+  enabled: true
+  create_only_when_changed: true
+
+
+# GitHub repository metadata
+repository:
+  metadata_only: true
+  include_sql_files: false
+  include_database_data: false
+  include_credentials: false
+
+
+# Object folder mapping
+object_folders:
+  TABLE: tables
+  VIEW: views
+  PROCEDURE: procedures
+  FUNCTION: functions
+  TRIGGER: triggers
+  EVENT: events

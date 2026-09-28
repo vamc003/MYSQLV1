@@ -1,0 +1,10 @@
+object:
+  type: trigger
+  name: trg_employee_created
+event: INSERT
+table: employees
+timing: AFTER
+statement: "BEGIN\n\n    INSERT INTO employee_audit\n    (\n        employee_id,\n\
+  \        action_type\n    )\n    VALUES\n    (\n        NEW.employee_id,\n     \
+  \   'EMPLOYEE_CREATED'\n    );\n\nEND"
+orientation: ROW

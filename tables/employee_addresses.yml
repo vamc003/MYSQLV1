@@ -1,0 +1,116 @@
+object:
+  type: table
+  name: employee_addresses
+metadata:
+  engine: InnoDB
+  collation: utf8mb4_0900_ai_ci
+  comment: ''
+columns:
+- name: address_id
+  position: 1
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: auto_increment
+  comment: ''
+- name: employee_id
+  position: 2
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: address_line1
+  position: 3
+  data_type: varchar
+  column_type: varchar(200)
+  length: 200
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: city
+  position: 4
+  data_type: varchar
+  column_type: varchar(100)
+  length: 100
+  precision: null
+  scale: null
+  nullable: false
+  default: null
+  extra: ''
+  comment: ''
+- name: state
+  position: 5
+  data_type: varchar
+  column_type: varchar(100)
+  length: 100
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: country
+  position: 6
+  data_type: varchar
+  column_type: varchar(100)
+  length: 100
+  precision: null
+  scale: null
+  nullable: true
+  default: India
+  extra: ''
+  comment: ''
+- name: postal_code
+  position: 7
+  data_type: varchar
+  column_type: varchar(20)
+  length: 20
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: address_type
+  position: 8
+  data_type: enum
+  column_type: enum('Home','Office')
+  length: 6
+  precision: null
+  scale: null
+  nullable: true
+  default: Home
+  extra: ''
+  comment: ''
+primary_key:
+  columns:
+  - address_id
+foreign_keys:
+- name: fk_address_employee
+  columns:
+  - employee_id
+  referenced_table: employees
+  referenced_columns:
+  - employee_id
+  update_rule: NO ACTION
+  delete_rule: CASCADE
+unique_constraints: []
+indexes:
+- name: fk_address_employee
+  unique: false
+  type: BTREE
+  columns:
+  - employee_id
+check_constraints: []

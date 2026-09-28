@@ -1,0 +1,11 @@
+object:
+  type: trigger
+  name: trg_salary_updated
+event: UPDATE
+table: employees
+timing: AFTER
+statement: "BEGIN\n\n    IF OLD.salary <> NEW.salary THEN\n\n        INSERT INTO employee_salaries\n\
+  \        (\n            employee_id,\n            salary,\n            effective_from\n\
+  \        )\n        VALUES\n        (\n            NEW.employee_id,\n          \
+  \  NEW.salary,\n            CURRENT_DATE\n        );\n\n    END IF;\n\nEND"
+orientation: ROW

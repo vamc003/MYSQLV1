@@ -1,0 +1,10 @@
+object:
+  type: view
+  name: v_department_summary
+definition: select `d`.`department_id` AS `department_id`,`d`.`department_name` AS
+  `department_name`,count(`e`.`employee_id`) AS `employee_count`,coalesce(avg(`e`.`salary`),0)
+  AS `average_salary`,coalesce(max(`e`.`salary`),0) AS `maximum_salary`,coalesce(min(`e`.`salary`),0)
+  AS `minimum_salary` from (`employee_management`.`departments` `d` left join `employee_management`.`employees`
+  `e` on((`d`.`department_id` = `e`.`department_id`))) group by `d`.`department_id`,`d`.`department_name`
+check_option: NONE
+updatable: 'NO'

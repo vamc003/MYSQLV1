@@ -1,0 +1,4 @@
+database:
+  database_name: employee_management
+  character_set: utf8mb4
+  collation: utf8mb4_0900_ai_ci

@@ -1,0 +1,11 @@
+object:
+  type: procedure
+  name: sp_get_employee
+definition: "BEGIN\n\n    SELECT\n        employee_id,\n        first_name,\n    \
+  \    last_name,\n        email,\n        job_title,\n        department_id,\n  \
+  \      salary,\n        employment_status\n    FROM employees\n    WHERE employee_id\
+  \ = p_employee_id;\n\nEND"
+return_type: null
+sql_data_access: CONTAINS SQL
+deterministic: 'NO'
+security_type: DEFINER

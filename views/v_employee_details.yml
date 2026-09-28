@@ -1,0 +1,10 @@
+object:
+  type: view
+  name: v_employee_details
+definition: select `e`.`employee_id` AS `employee_id`,concat(`e`.`first_name`,' ',`e`.`last_name`)
+  AS `employee_name`,`e`.`email` AS `email`,`e`.`job_title` AS `job_title`,`d`.`department_name`
+  AS `department_name`,`d`.`location` AS `location`,`e`.`salary` AS `salary`,`e`.`employment_status`
+  AS `employment_status`,`e`.`hire_date` AS `hire_date` from (`employee_management`.`employees`
+  `e` join `employee_management`.`departments` `d` on((`e`.`department_id` = `d`.`department_id`)))
+check_option: NONE
+updatable: 'YES'

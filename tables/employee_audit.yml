@@ -1,0 +1,59 @@
+object:
+  type: table
+  name: employee_audit
+metadata:
+  engine: InnoDB
+  collation: utf8mb4_0900_ai_ci
+  comment: ''
+columns:
+- name: audit_id
+  position: 1
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: false
+  default: null
+  extra: auto_increment
+  comment: ''
+- name: employee_id
+  position: 2
+  data_type: int
+  column_type: int
+  length: null
+  precision: 10
+  scale: 0
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: action_type
+  position: 3
+  data_type: varchar
+  column_type: varchar(50)
+  length: 50
+  precision: null
+  scale: null
+  nullable: true
+  default: null
+  extra: ''
+  comment: ''
+- name: action_timestamp
+  position: 4
+  data_type: timestamp
+  column_type: timestamp
+  length: null
+  precision: null
+  scale: null
+  nullable: true
+  default: CURRENT_TIMESTAMP
+  extra: DEFAULT_GENERATED
+  comment: ''
+primary_key:
+  columns:
+  - audit_id
+foreign_keys: []
+unique_constraints: []
+indexes: []
+check_constraints: []
